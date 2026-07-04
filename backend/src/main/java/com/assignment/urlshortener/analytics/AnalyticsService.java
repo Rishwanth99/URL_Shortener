@@ -47,11 +47,16 @@ public class AnalyticsService {
         UrlMapping mapping = urlMappingRepository.findByShortCode(shortCode)
                 .orElseThrow(() -> new ResourceNotFoundException("Short URL not found: " + shortCode));
         Instant last24Hours = Instant.now().minus(24, ChronoUnit.HOURS);
+        Instant lastHour = Instant.now().minus(1, ChronoUnit.HOURS);
+        Instant startOfToday = Instant.now().truncatedTo(ChronoUnit.DAYS);
         return new AnalyticsResponse(
                 mapping.getShortCode(),
                 mapping.getOriginalUrl(),
                 clickEventRepository.countByUrlMapping(mapping),
                 clickEventRepository.countByUrlMappingAndClickedAtAfter(mapping, last24Hours),
+                clickEventRepository.countByUrlMappingAndClickedAtAfter(mapping, lastHour),
+                clickEventRepository.countByUrlMappingAndClickedAtAfter(mapping, startOfToday),
+                clickEventRepository.countDistinctIpAddressHashByUrlMapping(mapping),
                 clickEventRepository.findTop10ByUrlMappingOrderByClickedAtDesc(mapping)
                         .stream()
                         .map(event -> new AnalyticsResponse.ClickSummary(event.getClickedAt()))

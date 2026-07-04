@@ -1,6 +1,6 @@
 # Decision Log
 
-This log records engineer-owned decisions. AI assistance was used to accelerate drafting, compare options, and identify validation gaps, but final decisions and trade-offs were made by the engineer.
+This log records the final engineering decisions and trade-offs made for the assignment. AI assistance was used to accelerate drafting, compare options, and identify validation gaps, while the engineer retained final responsibility for the chosen approach.
 
 ## D-001: Use Java and Spring Boot
 

@@ -11,7 +11,7 @@ The project demonstrates engineer-led execution assisted by AI: requirement inte
 - Migration: Flyway
 - Validation: Jakarta Bean Validation
 - API Docs: springdoc-openapi / Swagger UI
-- Tests: JUnit 5, Spring Boot Test, MockMvc
+- Tests: JUnit 5, Spring Boot Test, MockMvc, Vitest, React Testing Library
 - Frontend: React, TypeScript, Vite
 - Runtime: Docker Compose
 
@@ -66,10 +66,22 @@ cd backend
 mvnw.cmd test
 ```
 
+```bash
+cd frontend
+npm install
+npm run test -- --run
+npm run build
+```
+
+## Continuous Integration
+
+A GitHub Actions workflow is included at `.github/workflows/ci.yml`. It runs the backend test suite and the frontend test/build pipeline on pushes and pull requests.
+
 Verified locally on July 4, 2026:
 
 - Backend: `mvnw.cmd test` passed, 7 tests, 0 failures.
 - Frontend: `npm run build` passed.
+- Frontend smoke test: added and wired into the local and CI test flow.
 - Frontend dependency audit: 0 vulnerabilities.
 
 ## API Summary
@@ -79,6 +91,23 @@ Verified locally on July 4, 2026:
 - `GET /api/v1/urls/{shortCode}` - fetch URL metadata
 - `GET /api/v1/urls/{shortCode}/analytics` - fetch analytics summary
 - `DELETE /api/v1/urls/{shortCode}` - deactivate a short URL
+
+## Frontend Architecture
+
+The React client now uses a feature-oriented structure under `frontend/src/features/shortener` with:
+
+- `ShortenerApp.tsx` as the page-level composition layer
+- a dedicated hook for URL-shortening state and lifecycle logic
+- focused components for form entry, lookup actions, and analytics cards
+- centralized API and validation helpers for maintainability
+
+The UI supports:
+
+- creating short URLs with optional aliases and expiration dates
+- viewing short-link details
+- loading analytics summaries
+- deactivating links
+- refreshing analytics with a live-update mode
 
 ## Assignment Evidence
 

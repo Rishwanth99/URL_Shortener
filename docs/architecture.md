@@ -7,6 +7,7 @@ The architecture is intentionally straightforward: a Spring Boot REST API, a rel
 ## Components
 
 - React/Tailwind frontend: demo UI for creating URLs and viewing analytics.
+- Feature-oriented React modules: the shortener experience is grouped under `frontend/src/features/shortener` for maintainability and clearer separation of concerns.
 - Spring REST controllers: HTTP boundary and request/response mapping.
 - Service layer: business rules for creation, redirect eligibility, deactivation, and analytics.
 - Repository layer: Spring Data JPA persistence abstraction.
@@ -38,7 +39,7 @@ The architecture is intentionally straightforward: a Spring Boot REST API, a rel
 
 1. Client calls `GET /api/v1/urls/{shortCode}/analytics`.
 2. Analytics service loads URL mapping and click events.
-3. API returns total clicks, last-24-hour clicks, and recent click timestamps.
+3. API returns total clicks, last-24-hour clicks, last-hour clicks, today's clicks, unique visitors, and recent click timestamps.
 
 ## Module Boundaries
 
@@ -47,6 +48,7 @@ The architecture is intentionally straightforward: a Spring Boot REST API, a rel
 - `common`: error model, exception handling, rate limiting.
 - `config`: application properties and cross-origin configuration.
 - `redirect`: public redirect endpoint.
+- `frontend/src/features/shortener`: feature-level UI composition, API integration, validation, and component structure for the shortener experience.
 
 ## Key Engineering Decisions
 

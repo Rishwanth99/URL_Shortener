@@ -4,12 +4,12 @@
 
 The source requirement is the interview assignment PDF: "Build an AI-Assisted Software Engineering System - URL Shortener."
 
-## Engineer Interpretation
+## Interpretation
 
-The engineer interpreted the assignment as requiring two connected outcomes:
+The assignment was interpreted as requiring two connected outcomes:
 
 1. A working URL shortener prototype that can be run and reviewed end to end.
-2. Clear evidence of disciplined, engineer-led AI-assisted software engineering.
+2. Clear evidence of disciplined engineering execution and decision-making.
 
 The second outcome is intentionally treated as first-class. The assignment evaluates requirement understanding, decomposition, execution, validation, risk control, oversight, and final summary. Code alone would not satisfy the PDF.
 
@@ -28,6 +28,8 @@ The second outcome is intentionally treated as first-class. The assignment evalu
 - Apply basic rate limiting to protect the prototype.
 - Provide API documentation through Swagger.
 - Provide a small frontend for demonstration.
+- Keep the frontend maintainable through a feature-oriented structure rather than a single monolithic component.
+- Expose richer management actions to the demo UI, including lookup, analytics, deactivation, and live-refresh analytics.
 
 ## Normalized Engineering Requirements
 

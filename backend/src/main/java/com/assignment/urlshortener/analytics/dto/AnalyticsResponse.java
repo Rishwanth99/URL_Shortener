@@ -8,6 +8,9 @@ public record AnalyticsResponse(
         String originalUrl,
         long totalClicks,
         long clicksLast24Hours,
+        long clicksLastHour,
+        long clicksToday,
+        long uniqueVisitors,
         List<ClickSummary> recentClicks
 ) {
     public record ClickSummary(Instant clickedAt) {

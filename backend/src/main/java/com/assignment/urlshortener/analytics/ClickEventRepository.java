@@ -13,5 +13,7 @@ public interface ClickEventRepository extends JpaRepository<ClickEvent, UUID> {
     List<ClickEvent> findTop10ByUrlMappingOrderByClickedAtDesc(UrlMapping urlMapping);
 
     long countByUrlMappingAndClickedAtAfter(UrlMapping urlMapping, Instant clickedAt);
+
+    long countDistinctIpAddressHashByUrlMapping(UrlMapping urlMapping);
 }
 

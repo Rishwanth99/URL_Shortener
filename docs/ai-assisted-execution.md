@@ -2,7 +2,7 @@
 
 ## Ownership Model
 
-The engineer retained ownership of the work. AI was used as an assistant for analysis, drafting, scaffolding support, test-case ideation, and review preparation. AI did not make final product or architecture decisions.
+The work was carried out with clear engineering ownership. AI was used as an assistant for analysis, drafting, scaffolding support, test-case ideation, and review preparation, while final product and architecture decisions remained with the engineer.
 
 ## Working Rules
 

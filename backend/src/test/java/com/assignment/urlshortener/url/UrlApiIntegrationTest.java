@@ -47,7 +47,10 @@ class UrlApiIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.shortCode", equalTo("eng-docs")))
                 .andExpect(jsonPath("$.totalClicks", equalTo(1)))
-                .andExpect(jsonPath("$.clicksLast24Hours", equalTo(1)));
+                .andExpect(jsonPath("$.clicksLast24Hours", equalTo(1)))
+                .andExpect(jsonPath("$.clicksLastHour", equalTo(1)))
+                .andExpect(jsonPath("$.clicksToday", equalTo(1)))
+                .andExpect(jsonPath("$.uniqueVisitors", equalTo(1)));
     }
 
     @Test
