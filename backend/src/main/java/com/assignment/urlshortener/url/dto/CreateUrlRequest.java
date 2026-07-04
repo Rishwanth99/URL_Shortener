@@ -1,13 +1,14 @@
 package com.assignment.urlshortener.url.dto;
 
+import java.time.Instant;
+
+import org.hibernate.validator.constraints.URL;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import org.hibernate.validator.constraints.URL;
-
-import java.time.Instant;
 
 @Schema(description = "Payload used to create a new short URL")
 public record CreateUrlRequest(

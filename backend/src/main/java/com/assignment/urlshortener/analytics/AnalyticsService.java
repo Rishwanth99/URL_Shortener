@@ -1,13 +1,5 @@
 package com.assignment.urlshortener.analytics;
 
-import com.assignment.urlshortener.analytics.dto.AnalyticsResponse;
-import com.assignment.urlshortener.common.exception.ResourceNotFoundException;
-import com.assignment.urlshortener.url.UrlMapping;
-import com.assignment.urlshortener.url.UrlMappingRepository;
-import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -15,6 +7,16 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.HexFormat;
 import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.assignment.urlshortener.analytics.dto.AnalyticsResponse;
+import com.assignment.urlshortener.common.exception.ResourceNotFoundException;
+import com.assignment.urlshortener.url.UrlMapping;
+import com.assignment.urlshortener.url.UrlMappingRepository;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @Service
 public class AnalyticsService {

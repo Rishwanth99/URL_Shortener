@@ -1,8 +1,8 @@
 package com.assignment.urlshortener.url.dto;
 
-import io.swagger.v3.oas.annotations.media.Schema;
-
 import java.time.Instant;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 
 @Schema(description = "Representation of a shortened URL after creation or lookup")
 public record UrlResponse(
